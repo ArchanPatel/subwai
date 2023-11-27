@@ -1,4 +1,6 @@
 import '@styles/globals.css'
+import Nav from '@components/Nav';
+
 
 export const metadata={
   title: "Subwai",
@@ -15,6 +17,7 @@ export default function RootLayout({ children }) {
         </div>
 
         <main className='app'>
+          <Nav/>
             {children}
         </main>
     </body>

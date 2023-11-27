@@ -1,8 +1,20 @@
+import Options from "@components/Options";
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <section className='w-full flex-center flex-col'>
+      <h1 className='head_text text-center'>
+        Hello,
+        <br className='max-md:hidden' />
+      {/* <span className='green_gradient text-center'> Automated Inventory</span> */}
+      </h1>
+      <p className='desc text-center'>
+      Spectate your Subway Smart Shelf
+    </p>
+    
+    <Options />
+    </section>
   )
 }
 
-export default Home
+export default Home;
