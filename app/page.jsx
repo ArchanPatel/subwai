@@ -9,9 +9,10 @@ const Home = () => {
       {/* <span className='green_gradient text-center'> Automated Inventory</span> */}
       </h1>
       <p className='desc text-center'>
-      Spectate your Subway Smart Shelf
+      Spectate your Subway Smart Shelf:
     </p>
-    
+    <div className="Home" style={{ marginTop: '80px' }}/>
+
     <Options />
     </section>
   )
