@@ -19,7 +19,7 @@ const Home = () => {
     </div>:
     <div>
         <section class="hero">
-            <h1>Welcome to Our Platform</h1>
+            <h1>Welcome to SubwAI</h1>
             <p>Unlock a world of insights and convenience with our services.</p>
             <p>Please Sign in</p>
         </section>
