@@ -24,23 +24,27 @@ const Home = () => {
             <p>Please Sign in</p>
         </section>
 
-        <section class="features">
-            <div class="feature-item">
-                <h2>Your Live Inventory Counts</h2>
-                <p>Track your inventory in real-time.</p>
-            </div>
-            <div class="feature-item">
-                <h2>Suggested Ordering</h2>
-                <p>Receive smart suggestions for your inventory orders.</p>
-            </div>
-            <div class="feature-item">
-                <h2>Statistics</h2>
-                <p>Get detailed insights and analytics.</p>
-            </div>
-        </section>
+      <section class="features">
+        <div className="feature-item">
+          <h2>Your Live Inventory Counts</h2>
+          <p>Track your inventory in real-time.</p>
+        </div>
+        <div className="feature-item">
+          <h2>Suggested Ordering</h2>
+          <p>Receive smart suggestions for your inventory orders.</p>
+        </div>
+        <div className="feature-item">
+          <h2>Required Inventory</h2>
+          <p>Modify your required inventory amounts.</p>
+        </div>
+        <div className="feature-item">
+          <h2>Statistics</h2>
+          <p>Get detailed insights and analytics.</p>
+        </div>
+      </section>
     </div>
-}
-  </section>
+      }
+    </section>
   )
 }
 
