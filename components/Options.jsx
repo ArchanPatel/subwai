@@ -27,13 +27,13 @@ const Options = () => {
                   <a href="/suggested_order" className="btn btn-success">Suggested Order</a>
               </div>
           </div>
-          <div className="feature-item">
+          {/* <div className="feature-item">
               <h2>Statistics</h2>
               <p>Get detailed insights and analytics.</p>
               <div className="button">
                   <a href="/statistics" className="btn btn-success">Statistics</a>
               </div>
-          </div>
+          </div> */}
       </section>
 
   )

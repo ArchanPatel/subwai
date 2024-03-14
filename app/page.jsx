@@ -24,7 +24,7 @@ const Home = () => {
             <p>Please Sign in</p>
         </section>
 
-      <section class="features">
+      {/* <section class="features">
         <div className="feature-item">
           <h2>Your Live Inventory Counts</h2>
           <p>Track your inventory in real-time.</p>
@@ -41,7 +41,7 @@ const Home = () => {
           <h2>Statistics</h2>
           <p>Get detailed insights and analytics.</p>
         </div>
-      </section>
+      </section> */}
     </div>
       }
     </section>
