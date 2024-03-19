@@ -1,11 +1,21 @@
 'use client';
 
 import Options from "@components/Options";
-import {useSession} from "next-auth/react";
+import { useEffect, useState } from "react";
+import { signIn, useSession, getProviders } from "next-auth/react";
 
 const Home = () => {
   const {data: session} = useSession();  
+  const [providers, setProviders] = useState(null);
+  const [toggleDropdown, setToggleDropdown] = useState(false)
 
+  useEffect(() => {
+    const setUpProviders = async() => {
+        const response = await getProviders();
+        setProviders(response);
+    }
+    setUpProviders();
+  },[])
   return (
     
     <section className='w-full flex-center flex-col'>
@@ -21,26 +31,42 @@ const Home = () => {
         <section class="hero">
             <h1>Welcome to SubwAI</h1>
             <p>Unlock a world of insights and convenience with our services.</p>
-            <p>Please Sign in</p>
+            {providers &&
+              Object.values(providers).map((provider) => (
+                <button
+                  type='button'
+                  key={provider.name}
+                  onClick={() => {
+                    signIn(provider.id);
+                  }}
+                  className='black_btn centered'
+                >
+                  Sign in
+                </button>
+              ))}
         </section>
 
-        <section class="features">
-            <div class="feature-item">
-                <h2>Your Live Inventory Counts</h2>
-                <p>Track your inventory in real-time.</p>
-            </div>
-            <div class="feature-item">
-                <h2>Suggested Ordering</h2>
-                <p>Receive smart suggestions for your inventory orders.</p>
-            </div>
-            <div class="feature-item">
-                <h2>Statistics</h2>
-                <p>Get detailed insights and analytics.</p>
-            </div>
-        </section>
+      {/* <section class="features">
+        <div className="feature-item">
+          <h2>Your Live Inventory Counts</h2>
+          <p>Track your inventory in real-time.</p>
+        </div>
+        <div className="feature-item">
+          <h2>Suggested Ordering</h2>
+          <p>Receive smart suggestions for your inventory orders.</p>
+        </div>
+        <div className="feature-item">
+          <h2>Required Inventory</h2>
+          <p>Modify your required inventory amounts.</p>
+        </div>
+        <div className="feature-item">
+          <h2>Statistics</h2>
+          <p>Get detailed insights and analytics.</p>
+        </div>
+      </section> */}
     </div>
-}
-  </section>
+      }
+    </section>
   )
 }
 

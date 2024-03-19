@@ -1,19 +1,17 @@
-"use client";
-
-import SuggestedOrderTable from '../../components/SuggestedOrderTable';
+import RequiredInventoryTable from '../../components/RequiredInventoryTable';
 import BackButton from '@components/BackButton';
 
-const SuggestedOrderPage = () => {
+const RequiredInventoryPage = () => {
     return (
         <div className="container">
             <div className="backButtonContainer">
                 <BackButton />
             </div>
             <div className="contentContainer">
-            <SuggestedOrderTable />
+                <RequiredInventoryTable/>
             </div>
         </div>
     );
 };
 
-export default SuggestedOrderPage;
+export default RequiredInventoryPage;
