@@ -211,7 +211,7 @@
   margin-bottom: 10px;
   color: #333;
   font-weight: bold;
-  text-align: left;
+  text-align: center;
 }
 .user-details p {
   font-size: 14px;
@@ -349,6 +349,5 @@ canvas {
 
 .centered-profile-card {
   display: flex;
-  flex-direction: column;
   align-items: center;
 }

@@ -7,12 +7,12 @@ const profile = () => {
   const {data: session} = useSession(); 
 
   return (
-    <div>
+    <div className="profile-card">
     <div className="backButtonContainer">
         <BackButton />
     </div>
-
-    <div className="profile-card">
+    
+    
         <div className="profile-picture">
             <img 
                 src={session?.user.image}
@@ -36,7 +36,6 @@ const profile = () => {
             </ul>
         </div>
     </div>
-</div>
 
 
   )
