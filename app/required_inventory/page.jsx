@@ -3,10 +3,13 @@ import BackButton from '@components/BackButton';
 
 const RequiredInventoryPage = () => {
     return (
-        <div>
-            <BackButton />
-            {/* Other content */}
-            <RequiredInventoryTable />
+        <div className="container">
+            <div className="backButtonContainer">
+                <BackButton />
+            </div>
+            <div className="contentContainer">
+                <RequiredInventoryTable/>
+            </div>
         </div>
     );
 };

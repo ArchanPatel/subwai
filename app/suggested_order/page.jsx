@@ -5,10 +5,13 @@ import BackButton from '@components/BackButton';
 
 const SuggestedOrderPage = () => {
     return (
-        <div>
-            <BackButton />
-            {/* Other content */}
+        <div className="container">
+            <div className="backButtonContainer">
+                <BackButton />
+            </div>
+            <div className="contentContainer">
             <SuggestedOrderTable />
+            </div>
         </div>
     );
 };

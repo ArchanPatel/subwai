@@ -21,25 +21,26 @@ const InventoryTable = () => {
 
     return (
         <div>
-            <h2>Inventory Table</h2>
+            <h1 style={{ textAlign: 'center', fontSize: '2em', fontWeight: 'bold' }}>Inventory</h1>
             <table>
                 <thead>
-                <tr>
-                    <th>Product</th>
-                    <th>Quantity</th>
-                </tr>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                    </tr>
                 </thead>
                 <tbody>
-                {inventoryData.map(item => (
-                    <tr key={item.productName}>
-                        <td>{item.productName}</td>
-                        <td>{item.quantity}</td>
-                    </tr>
-                ))}
+                    {inventoryData.map(item => (
+                        <tr key={item.productName}>
+                            <td>{item.productName}</td>
+                            <td>{item.quantity}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>
     );
+    
 };
 
 export default InventoryTable;

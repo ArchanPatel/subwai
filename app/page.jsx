@@ -1,11 +1,21 @@
 'use client';
 
 import Options from "@components/Options";
-import {useSession} from "next-auth/react";
+import { useEffect, useState } from "react";
+import { signIn, useSession, getProviders } from "next-auth/react";
 
 const Home = () => {
   const {data: session} = useSession();  
+  const [providers, setProviders] = useState(null);
+  const [toggleDropdown, setToggleDropdown] = useState(false)
 
+  useEffect(() => {
+    const setUpProviders = async() => {
+        const response = await getProviders();
+        setProviders(response);
+    }
+    setUpProviders();
+  },[])
   return (
     
     <section className='w-full flex-center flex-col'>
@@ -21,7 +31,19 @@ const Home = () => {
         <section class="hero">
             <h1>Welcome to Our Platform</h1>
             <p>Unlock a world of insights and convenience with our services.</p>
-            <p>Please Sign in</p>
+            {providers &&
+              Object.values(providers).map((provider) => (
+                <button
+                  type='button'
+                  key={provider.name}
+                  onClick={() => {
+                    signIn(provider.id);
+                  }}
+                  className='black_btn centered'
+                >
+                  Sign in
+                </button>
+              ))}
         </section>
 
       {/* <section class="features">

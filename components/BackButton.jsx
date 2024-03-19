@@ -10,7 +10,7 @@ const BackButton = () => {
   };
 
   return (
-    <button onClick={handleClick}>
+    <button type='button' onClick={handleClick} className='black_btn'>
       Back
     </button>
   );

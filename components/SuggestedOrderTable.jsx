@@ -21,7 +21,7 @@ const SuggestedOrderTable = () => {
 
     return (
         <div>
-            <h2>Suggested Order Table</h2>
+            <h1 style={{ textAlign: 'center', fontSize: '2em', fontWeight: 'bold' }}>Suggested Ordering</h1>
             <table>
                 <thead>
                 <tr>

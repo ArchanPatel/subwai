@@ -21,21 +21,21 @@ const RequiredInventoryTable = () => {
 
     return (
         <div>
-            <h2>Required Inventory Table</h2>
+            <h1 style={{ textAlign: 'center', fontSize: '2em', fontWeight: 'bold' }}>Required Inventory</h1>
             <table>
                 <thead>
-                <tr>
-                    <th>Product</th>
-                    <th>Required Quantity</th>
-                </tr>
+                    <tr>
+                        <th>Product</th>
+                        <th>Required Inventory</th>
+                    </tr>
                 </thead>
                 <tbody>
-                {requiredInventoryData.map(item => (
-                    <tr key={item.productName}>
-                        <td>{item.productName}</td>
-                        <td>{item.requiredInv}</td>
-                    </tr>
-                ))}
+                    {requiredInventoryData.map(item => (
+                        <tr key={item.productName}>
+                            <td>{item.productName}</td>
+                            <td>{item.requiredInv}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>
