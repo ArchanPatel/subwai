@@ -13,13 +13,13 @@ const Options = () => {
                   <a href="/live_inventory" className="btn btn-success">Live Inventory</a>
               </div>
           </div>
-          <div className="feature-item">
+          {/* <div className="feature-item">
               <h2>Required Inventory</h2>
               <p>Modify your required inventory amounts.</p>
               <div className="button">
                   <a href="/required_inventory" className="btn btn-success">Required Inventory</a>
               </div>
-          </div>
+          </div> */}
           <div className="feature-item">
               <h2>Suggested Ordering</h2>
               <p>Receive smart suggestions for your inventory orders.</p>
