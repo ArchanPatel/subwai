@@ -6,14 +6,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "resetdb": "node utils/dbReset.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
     "bootstrap": "^5.3.2",
+    "dotenv": "^16.4.5",
     "mongobd": "^0.0.1-security.0",
-    "mongoose": "^8.0.1",
-    "next-auth": "^4.24.5"
+    "mongoose": "^8.2.2",
+    "next-auth": "^4.24.5",
+    "read-excel-file": "^5.7.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",

@@ -27,14 +27,14 @@ const profile = () => {
             <p>Account Type: Premium</p>
         </div>
 
-        <div className="settings-menu">
+        {/* <div className="settings-menu">
             <h1>Settings</h1>
             <ul>
                 <li><a href="#">FAQ</a></li>
                 <li><a href="#">Store Information</a></li>
                 <li><a href="#">All Store Statistics</a></li>
             </ul>
-        </div>
+        </div> */}
     </div>
 
 

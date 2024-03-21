@@ -7,7 +7,7 @@ export default function convertWeightToBoxes(productName, weightGrams) {
             // Assuming 1 box of ProductA contains 500 grams
             boxes = weight_ounces / (8 * 80);
             break;
-        case 'Jalapeno Peppers':
+        case 'Banana Peppers':
             // Assuming 1 box of ProductB contains 250 grams
             boxes = weight_ounces / (4 * 80);
             break;

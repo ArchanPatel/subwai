@@ -2,6 +2,7 @@ import { connectToDB } from "@utils/database";
 import Product from "@models/product";
 import Inventory from "@models/inventory";
 import RequiredInventory from "@models/requiredInventory";
+import convertWeightToBoxes from "../utils/converters";
 
 export default async function handler(req, res) {
     if (req.method !== "POST") {
@@ -14,7 +15,7 @@ export default async function handler(req, res) {
         const { products } = req.body;
 
         // Loop through each product in the request
-        for (const { product, inventoryLevel } of products) {
+        for (const { product, quantity } of products) {
             // Check if the product exists for the user in the products table
             let existingProduct = await Product.findOne({ name: product });
 
@@ -33,7 +34,7 @@ export default async function handler(req, res) {
             // Create a record in the inventory table for the product
             await Inventory.create({
                 productId: existingProduct._id,
-                quantity: inventoryLevel,
+                quantity: convertWeightToBoxes(existingProduct.name, quantity),
             });
         }
 

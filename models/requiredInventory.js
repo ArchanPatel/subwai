@@ -1,5 +1,6 @@
-import { Schema, model, models } from 'mongoose';
-
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const model = mongoose.model;
 
 const RequiredInventorySchema = new Schema({
     productId: {type: Schema.Types.ObjectId, ref: 'Product'}, // Reference to Product table

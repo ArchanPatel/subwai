@@ -1,8 +1,10 @@
-import { Schema, model } from 'mongoose';
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const model = mongoose.model;
 
 const InventorySchema = new Schema({
     productId: { type: Schema.Types.ObjectId, ref: 'Product' },
-    quantity: Number,
+    quantity: Number, //boxes
     timestamp: { type: Date, default: Date.now },
 });
 
@@ -16,4 +18,4 @@ try {
     Inventory = model("Inventory", InventorySchema);
 }
 
-export default Inventory;
+module.exports = Inventory;

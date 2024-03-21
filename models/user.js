@@ -1,5 +1,7 @@
-import { Schema, model, models } from 'mongoose';
-
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const model = mongoose.model;
+const models = mongoose.models;
 
 const UserSchema = new Schema({
     email: {

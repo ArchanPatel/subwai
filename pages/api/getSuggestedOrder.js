@@ -1,6 +1,5 @@
 import { connectToDB } from "@utils/database";
 import Product from "@models/product";
-import RequiredInventory from "@models/requiredInventory";
 import Inventory from "@models/inventory";
 
 export default async function handler(req, res) {
@@ -18,19 +17,29 @@ export default async function handler(req, res) {
             const latestEntry = await Inventory.findOne({ productId: product._id })
                 .sort({ timestamp: -1 })
 
-            const inv = await RequiredInventory.findOne({ productId: product._id });
+            const oneMonthAgo = new Date();
+            oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
 
-            let suggested;
+            // Find all inventory entries for the product in the past month
+            const entries = await Inventory.find({
+                productId: product._id,
+                timestamp: { $gte: oneMonthAgo }
+            });
 
-            if (latestEntry.quantity < inv.requiredInv) {
-                suggested = inv.requiredInv - latestEntry.quantity
-            } else {
-                suggested = 0
-            }
+            // Calculate the average quantity from these entries
+            let totalQuantity = 0;
+            entries.forEach(entry => {
+                totalQuantity += entry.quantity;
+            });
+
+            // Ensure division by zero doesn't occur
+            const averageQuantity = entries.length > 0 ? totalQuantity / entries.length : 0;
+
+            // Set the calculated average as 'suggested'
+            let suggested = Math.ceil(averageQuantity - latestEntry.quantity);
 
             return {
                 productName: product.name,
-                requiredInv: inv.requiredInv,
                 quantity: latestEntry.quantity,
                 suggested: suggested,
             };

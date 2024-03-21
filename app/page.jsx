@@ -21,14 +21,14 @@ const Home = () => {
     <section className='w-full flex-center flex-col'>
       {session?.user ? 
       <div>
-      <section class="hero">
+      <section className="hero">
             <h1>Hello {session?.user.name},</h1>
             <h4>Spectate your Subway Smart Shelf:</h4>
         </section>
     <Options /> 
     </div>:
     <div>
-        <section class="hero">
+        <section className="hero">
             <h1>Welcome to SubwAI</h1>
             <p>Unlock a world of insights and convenience with our services.</p>
             {providers &&
@@ -46,7 +46,7 @@ const Home = () => {
               ))}
         </section>
 
-      {/* <section class="features">
+      {/* <section className="features">
         <div className="feature-item">
           <h2>Your Live Inventory Counts</h2>
           <p>Track your inventory in real-time.</p>
