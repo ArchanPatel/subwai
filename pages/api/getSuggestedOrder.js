@@ -36,11 +36,11 @@ export default async function handler(req, res) {
             const averageQuantity = entries.length > 0 ? totalQuantity / entries.length : 0;
 
             // Set the calculated average as 'suggested'
-            let suggested = Math.ceil(averageQuantity - latestEntry.quantity);
+            let suggested = Math.ceil(averageQuantity - latestEntry.quantity) > 0 ? Math.ceil(averageQuantity - latestEntry.quantity) : 0;
 
             return {
                 productName: product.name,
-                quantity: latestEntry.quantity,
+                quantity: Number(latestEntry.quantity.toFixed(1)),
                 suggested: suggested,
             };
         }));
