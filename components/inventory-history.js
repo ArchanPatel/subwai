@@ -7,6 +7,7 @@ import {
   LinearScale,
   PointElement,
   LineElement,
+  LineController, // Import LineController
   Title,
   Tooltip,
   Legend
@@ -15,6 +16,7 @@ import { Chart } from 'react-chartjs-2';
 
 // Registering the necessary components for a line chart
 ChartJS.register(
+  LineController, // Register LineController
   CategoryScale,
   LinearScale,
   PointElement,
