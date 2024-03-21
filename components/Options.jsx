@@ -27,6 +27,13 @@ const Options = () => {
                   <a href="/suggested_order" className="btn btn-success">Suggested Order</a>
               </div>
           </div>
+          <div className="feature-item">
+            <h2>Inventory History</h2>
+            <p>View the historical inventory levels of your products.</p>
+            <div className="button">
+                <a href="/inventory_history" className="btn btn-success">View Inventory History</a>
+            </div>
+        </div>
           {/* <div className="feature-item">
               <h2>Statistics</h2>
               <p>Get detailed insights and analytics.</p>
