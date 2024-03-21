@@ -2,7 +2,7 @@ import { connectToDB } from "@utils/database";
 import Product from "@models/product";
 import Inventory from "@models/inventory";
 import RequiredInventory from "@models/requiredInventory";
-import convertWeightToBoxes from "../utils/converters";
+import convertWeightToBoxes from "@utils/converters";
 
 export default async function handler(req, res) {
     if (req.method !== "POST") {
